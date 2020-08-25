@@ -84,7 +84,7 @@ export default function Job({job, onClick}) {
                         renderLogos().map(
                             (logo,i) => {
                                 return (
-                                    <img key={i} src={logo} />
+                                    <img key={i} src={logo} alt="logo-language" />
                                 );
                             }
                         )
