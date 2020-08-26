@@ -1,6 +1,7 @@
 import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import { Typography } from '@material-ui/core';
+import moment from 'moment';
 
 import js from './assets/img/logo/js-logo.png';
 import php from './assets/img/logo/php-logo.png';
@@ -67,7 +68,9 @@ export default function Job({job, onClick}) {
         if (lowerDescription.includes('.net') && !lowerDescription.includes('.net/')) {
             logos.push(net);     
         }
-
+        //let time = moment(job.created_at).format("YYYYMMDD");
+        //console.log(moment(time));
+        //console.log(moment(job.created_at).fromNow());
         return logos;
     }
 
@@ -93,7 +96,7 @@ export default function Job({job, onClick}) {
             </div>
             
             <div className='flex-align-mid'>
-                <Typography>{job.created_at.split(' ').slice(0,3).join(' ')}</Typography>
+                <Typography>{moment(moment(job.created_at).format("YYYY-MM-DD HH:mm")).fromNow()}</Typography>
             </div>
         </Paper>
     )
